@@ -13,10 +13,11 @@ import {
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useToast } from "@/hooks/use-toast";
-import { Job } from "../types/jobs";
+import { JobPost } from "../types/job-post";
+import { formatDate } from "@/lib/utils";
 
 export default function AvailableJobs() {
-  const [jobs, setJobs] = useState<Job[]>([]);
+  const [jobs, setJobs] = useState<JobPost[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const { toast } = useToast();
 
@@ -71,12 +72,12 @@ export default function AvailableJobs() {
           {jobs.map((job) => (
             <Card key={job.id} className="flex flex-col">
               <CardHeader>
-                <CardTitle>{job.name}</CardTitle>
-                <CardDescription>{job.offices[0]?.name}</CardDescription>
+                <CardTitle>{job.title}</CardTitle>
+                <CardDescription>Location: {job.location.name}</CardDescription>
               </CardHeader>
               <CardContent className="flex-grow">
                 <p className="text-sm text-muted-foreground mb-2">
-                  Department: {job.departments[0]?.name || "Not specified"}
+                  Published on: {formatDate(job.created_at.toString()) || "-"}
                 </p>
               </CardContent>
               <CardFooter>

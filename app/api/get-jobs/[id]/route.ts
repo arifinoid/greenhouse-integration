@@ -1,10 +1,20 @@
 import axios from "axios";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function GET() {
+export async function GET(
+  _: NextRequest,
+  { params: { id } }: { params: { id: string } },
+) {
+  if (!id) {
+    return NextResponse.json(
+      { message: "Job ID is required" },
+      { status: 400 },
+    );
+  }
+
   try {
     const response = await axios.get(
-      "https://harvest.greenhouse.io/v1/job_posts",
+      `https://harvest.greenhouse.io/v1/job_posts/${id}`,
       {
         headers: {
           Authorization: `Basic ${Buffer.from(process.env.GREENHOUSE_API_KEY + ":").toString("base64")}`,
