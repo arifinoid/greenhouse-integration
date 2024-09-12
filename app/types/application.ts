@@ -4,7 +4,7 @@ export interface Application {
   attachments: any[];
   candidate_id: number;
   credited_to?: null;
-  current_stage: CurrentStage;
+  current_stage?: CurrentStage;
   id: number;
   job_post_id?: null;
   jobs: CurrentStage[];
@@ -23,7 +23,7 @@ export interface Application {
 
 export interface CurrentStage {
   id: number;
-  name: string;
+  name?: string;
 }
 
 export interface ProspectDetail {
