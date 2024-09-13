@@ -26,7 +26,7 @@ export default function AdminView() {
   const fetchJobs = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch("/api/get-jobs");
+      const response = await fetch("/api/jobs");
       if (!response.ok) {
         throw new Error("Failed to fetch jobs");
       }

@@ -20,7 +20,7 @@ export default function ApplyPage({
     const fetchJobDetails = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch(`/api/get-jobs/${params.jobPostId}`);
+        const response = await fetch(`/api/jobs/${params.jobPostId}`);
         if (!response.ok) {
           throw new Error("Failed to fetch job details");
         }

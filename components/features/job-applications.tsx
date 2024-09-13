@@ -27,7 +27,7 @@ export default function JobApplications({ jobId }: { jobId: number }) {
   const fetchApplicationsAndCandidates = async () => {
     setIsLoading(true);
     try {
-      const fetchApps = await fetch(`/api/get-applications?job_id=${jobId}`);
+      const fetchApps = await fetch(`/api/applications?job_id=${jobId}`);
       const fetchCandidates = await fetch(`/api/candidates?job_id=${jobId}`);
 
       const [applicationsData, candidatesData] = await Promise.all([
