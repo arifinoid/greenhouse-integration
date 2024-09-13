@@ -35,16 +35,16 @@ export interface Department {
   name: string;
   parent_id: null;
   parent_department_external_id: null;
-  child_ids: any[];
-  child_department_external_ids: any[];
+  child_ids: unknown[];
+  child_department_external_ids: unknown[];
   external_id: null;
 }
 
 export interface HiringTeam {
-  hiring_managers: any[];
-  recruiters: any[];
-  coordinators: any[];
-  sourcers: any[];
+  hiring_managers: unknown[];
+  recruiters: unknown[];
+  coordinators: unknown[];
+  sourcers: unknown[];
 }
 
 export interface KeyedCustomFields {
@@ -71,8 +71,8 @@ export interface Office {
   primary_contact_user_id: null;
   parent_id: null;
   parent_office_external_id: null;
-  child_ids: any[];
-  child_office_external_ids: any[];
+  child_ids: unknown[];
+  child_office_external_ids: unknown[];
   external_id: null;
 }
 

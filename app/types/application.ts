@@ -1,7 +1,7 @@
 export interface Application {
-  answers: any[];
+  answers: unknown[];
   applied_at: Date;
-  attachments: any[];
+  attachments: unknown[];
   candidate_id: number;
   credited_to?: null;
   current_stage?: CurrentStage;

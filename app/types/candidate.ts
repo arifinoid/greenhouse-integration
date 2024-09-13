@@ -21,9 +21,9 @@ export interface Candidate {
   can_email: boolean;
   tags: Tag[];
   applications: Application[];
-  educations: any[];
-  employments: any[];
-  linked_user_ids: any[];
+  educations: unknown[];
+  employments: unknown[];
+  linked_user_ids: unknown[];
 }
 
 export interface Address {
@@ -55,7 +55,7 @@ export interface Application {
   job_post_id: null;
   status: Status;
   current_stage: CurrentStage;
-  answers: any[];
+  answers: unknown[];
   prospective_department: null;
   prospective_office: null;
   prospect_detail: ProspectDetail;

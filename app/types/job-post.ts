@@ -45,7 +45,7 @@ export interface Question {
   label: string;
   name: string;
   type: Type;
-  values: any[];
+  values: unknown[];
   description: null | string;
 }
 
